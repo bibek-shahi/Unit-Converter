@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}
+Length
+{% endblock %}
+
+{% block content %}
+<h1>Length Converter</h1>
+
+<form method="POST">
+    <input type="text" name="nu">
+    <h2>Unit to Convert From</h2>
+
+    <br><br>
+
+    <select name="from_unit">
+    <option value="0.001">Millimeter</option>
+    <option value="0.01">Centimeter</option>
+    <option value="1">Meter</option>
+    <option value="1000">Kilometer</option>
+    <option value="0.0254">Inch</option>
+    <option value="0.3048">Foot</option>
+    <option value="0.9144">Yard</option>
+    <option value="1609.344">Mile</option>
+    </select>
+
+    <br><br>
+
+    <h2>Unit to Convert to</h2>
+
+    <br><br>
+
+    <select name="to_unit">
+    <option value="0.001">Millimeter</option>
+    <option value="0.01">Centimeter</option>
+    <option value="1">Meter</option>
+    <option value="1000">Kilometer</option>
+    <option value="0.0254">Inch</option>
+    <option value="0.3048">Foot</option>
+    <option value="0.9144">Yard</option>
+    <option value="1609.344">Mile</option>
+    </select>
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+    <br><br>
+    
+    {% if value %}
+    <h2>Result: {{ value }}</h2>
+    <a href="{{ url_for('length') }}">
+    <button type="button">Reset</button>
+    </a>
+    {% endif %}
+
+</form>
+{% endblock %}

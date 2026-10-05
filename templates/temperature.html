@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+Temperature
+{% endblock %}
+
+{% block content %}
+<h1>Temperature Converter</h1>
+<form method="POST">
+<input type="text" name="nu">
+    <h2>Unit to Convert From</h2>
+
+    <br><br>
+
+    <select name="from_unit">
+    <option value="celsius">Celsius</option>
+    <option value="fahrenheit">Fahrenheit</option>
+    <option value="kelvin">Kelvin</option>
+    </select>
+
+    <br><br>
+
+    <h2>Unit to Convert To</h2>
+
+    <select name="to_unit">
+    <option value="celsius">Celsius</option>
+    <option value="fahrenheit">Fahrenheit</option>
+    <option value="kelvin">Kelvin</option>
+    </select>
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+    <br><br>
+    
+
+    {% if value %}
+    <h2>Result: {{ value }}</h2>
+    {% endif %}
+</form>
+{% endblock %}

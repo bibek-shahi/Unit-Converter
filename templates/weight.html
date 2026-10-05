@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+Weight
+{% endblock %}
+
+{% block content %}
+<h1>Weight Converter</h1>
+<form method="POST">
+<input type="text" name="nu">
+    <h2>Unit to Convert From</h2>
+
+    <br><br>
+
+    <select name="from_unit">
+    <option value="0.000001">Milligram</option>
+    <option value="0.001">Gram</option>
+    <option value="1">Kilogram</option>
+    <option value="0.0283495">Ounce</option>
+    <option value="0.453592">Pound</option>
+    </select>
+
+    <br><br>
+
+    <h2>Unit to Convert To</h2>
+
+    <select name="to_unit">
+    <option value="0.000001">Milligram</option>
+    <option value="0.001">Gram</option>
+    <option value="1">Kilogram</option>
+    <option value="0.0283495">Ounce</option>
+    <option value="0.453592">Pound</option>
+    </select>
+
+    <br><br>
+
+    <input type="submit" value="Submit">
+
+
+    <br><br>
+    
+
+    {% if value %}
+    <h2>Result: {{ value }}</h2>
+    <a href="{{ url_for('length') }}">
+    <button type="button">Reset</button>
+    </a>
+    {% endif %}
+</form>
+{% endblock %}
